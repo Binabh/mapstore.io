@@ -2,7 +2,7 @@
     --mapstore-blue: #3ca9d6;
     --mapstore-green: #47b14a;
     --mapstore-black: #000000;
-    --mapstore-footer-color: #464646;
+    --mapstore-footer-color: #16232c;
     --mapstore-font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --mapstore-font-display: "Space Grotesk", var(--mapstore-font-body);
     --mapstore-radius: 14px;
@@ -111,7 +111,7 @@ a {
 
 .github-link:focus-visible,
 .navbar .btn-warning:focus-visible,
-.version-btn:focus-visible,
+.version-card:focus-visible,
 .social-links a:focus-visible {
     outline: 3px solid rgba(60, 169, 214, 0.45);
     outline-offset: 3px;
@@ -119,7 +119,7 @@ a {
 
 /* ===== Home hero ===== */
 .hero-section {
-    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+    background: linear-gradient(135deg, var(--mapstore-blue) 0%, var(--mapstore-green) 100%);
     padding: 4.5rem 0;
     position: relative;
     overflow: hidden;
@@ -137,63 +137,106 @@ a {
 }
 
 .hero-section h1 {
-    color: var(--mapstore-blue);
+    color: white;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     line-height: 1.15;
 }
 
 .hero-section p.lead {
+    color: white;
     font-size: 1.15rem;
     font-weight: 400;
     line-height: 1.55;
 }
 
-.version-btn {
-    min-width: 140px;
-    padding: 0.7rem 1.6rem;
-    margin-bottom: 0.5rem;
-    display: inline-block;
-    border: 1px solid transparent;
-    border-radius: 999px;
+.version-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.version-columns > [class*="col-"] {
+    width: auto;
+    padding: 0;
+    margin-top: 0;
+    flex: 0 0 auto;
+}
+
+.version-card {
+    min-width: 160px;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: var(--mapstore-radius);
+    background: rgba(255, 255, 255, 0.1);
     color: white;
-    font-weight: 700;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
-    transition: transform var(--mapstore-transition), box-shadow var(--mapstore-transition);
+    transition: color 150ms ease, background-color 150ms ease;
 }
 
-.version-btn:hover,
-.version-btn:focus {
+.version-card:hover,
+.version-card:focus {
     color: white;
     text-decoration: none;
 }
 
-.version-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--mapstore-control-shadow);
+.version-card:hover .version-text {
+    color: #f2a900;
+    text-decoration: underline;
 }
 
-.btn-latest {
-    background-color: var(--mapstore-green);
-    border-color: var(--mapstore-green);
+.version-card:focus-visible {
+    outline-color: rgba(255, 255, 255, 0.9);
 }
 
-.btn-stable {
-    background-color: var(--mapstore-blue);
-    border-color: var(--mapstore-blue);
+.version-indicator {
+    width: 12px;
+    height: 12px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.52);
 }
 
-.btn-development {
-    background-color: #dc3545;
-    border-color: #dc3545;
+.version-indicator-latest {
+    background-color: #042aff;
+}
+
+.version-indicator-stable {
+    background-color: #3ddc84;
+}
+
+.version-indicator-development {
+    background-color: #f2a900;
+}
+
+.version-card-content {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.version-label {
+    color: #eaf3fb;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
 .version-text {
-    color: #2c5f7c;
-    font-size: 0.9rem;
-    font-weight: 700;
-    margin-top: 0.3rem;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 .footer-section {
@@ -642,7 +685,7 @@ a {
     }
 
     .version-columns {
-        row-gap: 1rem;
+        justify-content: center;
     }
 
     .footer-item {
@@ -719,7 +762,7 @@ a {
 
     .github-link:hover,
     .navbar .btn-warning:hover,
-    .version-btn:hover,
+    .version-card:hover,
     .footer-item:hover,
     .footer-item:focus,
     .faq-item:hover,

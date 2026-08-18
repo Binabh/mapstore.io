@@ -51,38 +51,44 @@
                         <h1 class="display-8 fw-bold mb-4 text-center">
                             Open Source WebGIS application
                         </h1>
-                        <p class="lead text-muted mb-4 text-center">
+                        <p class="lead mb-4 text-center">
                             MapStore is a comprehensive Open Source WebGIS for managing and sharing web-based maps,
                             dashboards, and stories online.
                         </p>
 
-                        <!-- Version Buttons -->
+                        <!-- Release cards -->
                         <div class="row version-columns g-3">
                             <div class="col-md-4">
-                                <div class="text-center">
-                                    <a id="latest-release-link" href="" target="_blank" class="version-btn btn-latest">
-                                        Latest version
-                                    </a>
-                                    <div id="latest-release" class="version-text"></div>
-                                </div>
+                                <a id="latest-release-link" href="" target="_blank" rel="noopener noreferrer"
+                                    class="version-card">
+                                    <span class="version-indicator version-indicator-latest" aria-hidden="true"></span>
+                                    <span class="version-card-content">
+                                        <span class="version-label">Latest</span>
+                                        <span id="latest-release" class="version-text"></span>
+                                    </span>
+                                </a>
                             </div>
 
                             <div class="col-md-4">
-                                <div class="text-center">
-                                    <a id="stable-branch-link" href="" target="_blank" class="version-btn btn-stable">
-                                        Stable branch
-                                    </a>
-                                    <div id="stable-branch" class="version-text"></div>
-                                </div>
+                                <a id="stable-branch-link" href="" target="_blank" rel="noopener noreferrer"
+                                    class="version-card">
+                                    <span class="version-indicator version-indicator-stable" aria-hidden="true"></span>
+                                    <span class="version-card-content">
+                                        <span class="version-label">Stable</span>
+                                        <span id="stable-branch" class="version-text"></span>
+                                    </span>
+                                </a>
                             </div>
 
                             <div class="col-md-4">
-                                <div class="text-center">
-                                    <a id="dev-branch-link" href="" target="_blank" class="version-btn btn-development">
-                                        Development
-                                    </a>
-                                    <div id="dev-branch" class="version-text">master</div>
-                                </div>
+                                <a id="dev-branch-link" href="" target="_blank" rel="noopener noreferrer"
+                                    class="version-card">
+                                    <span class="version-indicator version-indicator-development" aria-hidden="true"></span>
+                                    <span class="version-card-content">
+                                        <span class="version-label">Development</span>
+                                        <span id="dev-branch" class="version-text">master</span>
+                                    </span>
+                                </a>
                             </div>
                         </div>
                     </div>
